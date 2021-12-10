@@ -1,0 +1,60 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* font-family: "PT Sans", sans-serif; */
+ 
+}
+
+
+.about,
+.contact,
+.blog,
+.shop,
+.gallery,
+.services {
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+  background-position: center;
+  background-repeat: none;
+  background-size: cover;
+  text-shadow: 4px 4px 4px #fff;
+}
+
+.home {
+  background-image: url(./images/1.png);
+  height:auto;
+}
+.logo {
+  /* background-image: url(./images/logo.png); */
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-top:2rem;
+}
+
+#services {
+  background-color: #232a3a;
+ 
+}
+#root .services {
+  background-color: #fff1e6;
+}
+
+#root .about {
+  background-color: #f0efeb;
+}
+#root .blog {
+  background-color: #e9ecef;
+}
+#root .gallery {
+  background-color: #d8f3dc;
+}
+h1 {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  
+}

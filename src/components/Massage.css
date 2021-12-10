@@ -1,0 +1,33 @@
+.massage-container {
+    background-color: #232a3a;
+    margin: 0 auto 0 auto;
+    width: 100%;
+    height: auto;
+    padding: 2rem 2rem 2rem 2rem  ;
+   
+}
+
+ .img-m {
+    width: 100%;
+    padding: 1rem;
+    height: auto; 
+}  
+
+@media screen and (min-width: 270px) and (max-width:768px){
+    .massage-container {
+        background-color: #232a3a;
+        margin: 0 auto 0 auto;
+        width: 100%;
+        height: auto;
+        padding: 2rem 2rem 2rem 2rem  ;
+       
+    }
+    
+     .img-m {
+        width: 100%;
+        padding: 0.5rem;
+        height: auto; 
+    }  
+    
+}
+    

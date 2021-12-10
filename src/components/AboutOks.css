@@ -1,0 +1,130 @@
+.extrapage-container {
+    background-color: #d8deeb;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    margin: auto;
+    height: auto;
+    color: black;
+    padding: 2rem 2rem;
+    overflow: hidden;
+}
+.information-about {
+    font-size: 18px;
+    font-family: 'Playfair Display', serif;
+    color: rgb(43, 39, 39);
+    letter-spacing: 0.5px;
+    line-height: 2rem;  
+    padding: 2rem;
+}
+
+.colum-about{
+   
+    text-align: center;
+    padding: 2rem;
+} 
+ /* .image-about1, .image-about2 {
+    width: 50%;
+  
+ 
+ }  */
+.colum-img1 {
+    background-image: url(../images/man2.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.colum-img2 {
+    background-image: url(../images/woman5.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+/* 
+ .btn-about {
+     width:100px;
+     border: 10px solid black;
+ } */
+
+  .small-about {
+    background-image: url(../images/woman2.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+
+ @media (min-width: 270px) and (max-width:767px) {
+  
+    .information-about {
+        font-size: 15px;
+        font-family: 'Playfair Display', serif;;
+        color: rgb(126, 125, 125);
+        letter-spacing: 0.5px;
+        line-height: 1.2rem; 
+    }
+   
+    .colum-img1, .colum-img2, .small-about {
+      
+        height: 300px;
+       
+    }
+    
+}  
+ h3 {
+    font-family: 'Playfair Display', serif;
+ }
+@media (min-width: 768px)  {
+   .extrapage-container {
+       width: 100%;
+       height: auto;
+   }
+    .small-about {
+        display:none;
+    }
+ 
+  
+    
+}  
+@media (min-width: 991px)  {
+    .extrapage-container {
+        width: 100%;
+        height: auto;
+    } 
+    /* .colum-about{
+        width: 100%;
+        height: 30vh;
+    }
+    
+    .colum-img1, .colum-img2{
+        width: 100%;
+        height:auto;
+        
+    } */
+   
+    .small-about {
+        display:none;
+    }
+    .information-about {
+        /* margin: 5rem; */
+        font-size: 18px;
+        font-family: 'Playfair Display', serif;
+        color: rgb(43, 39, 39);
+        letter-spacing: 0.5px;
+        line-height: 1.5rem; 
+        height: auto;
+    } 
+   
+}  
+@media (min-width: 1400px)  {
+    .small-about {
+        display:none;
+    } 
+    .information-about {
+   
+        font-size: 22px;
+        line-height: 3rem; 
+    }
+
+}  
+  .last {
+      margin-bottom: 1rem;
+  }
