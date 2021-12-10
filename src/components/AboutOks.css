@@ -74,7 +74,7 @@
  }
 @media (min-width: 768px)  {
    .extrapage-container {
-       width: 100%;
+  
        height: auto;
    }
     .small-about {
@@ -86,7 +86,7 @@
 }  
 @media (min-width: 991px)  {
     .extrapage-container {
-        width: 100%;
+  
         height: auto;
     } 
     /* .colum-about{

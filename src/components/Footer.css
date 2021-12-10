@@ -1,6 +1,6 @@
 .footer-container {
   
-    background-color:#495057;
+    background-color:#79839e;
     width: 100%;
     padding: 2rem 0 2rem 0;
     display: flex;
@@ -139,6 +139,7 @@
     }
   }
    @media screen and (max-width: 650px) {
+   
     .footer-links {
       padding-top: 2rem;
     }
@@ -198,3 +199,11 @@
     color: #fff;
     padding-bottom: 3rem;
   }
+
+  @media  (min-width: 651px) {
+    .footer-container {
+      padding: 0;  
+    }
+   
+  }  
+  
