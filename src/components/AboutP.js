@@ -20,13 +20,13 @@ function AboutP() {
   return (
     <div id="" className=" servicesAbout-container flex ">
 
-
+<div className="text-center fs-1 pb-5">ABOUT US</div>
     <div class="row pictures justify-content-center ">
                 <div class="col-12 col-md-6 col-lg-6 col-xl-6 colum-about colum-img1  ">
             
                </div> 
                <div class="col-12 col-md-6 col-lg-6 colum-about  ">
-               <p className="informationServices-about text-center">
+               <p className="informationServices-about ">
                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                Sed malesuada molestie nulla, vel hendrerit nulla suscipit sed.
                 Donec diam leo, efficitur sit amet finibus ac, laoreet in est. 
@@ -68,7 +68,7 @@ function AboutP() {
             
                </div> 
                <div class="col-12 col-md-6 col-lg-6 colum-about  ">
-               <p className="informationServices-about text-center">
+               <p className="informationServices-about ">
                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                Sed malesuada molestie nulla, vel hendrerit nulla suscipit sed.
                 Donec diam leo, efficitur sit amet finibus ac, laoreet in est. 

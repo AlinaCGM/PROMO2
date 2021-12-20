@@ -1,14 +1,16 @@
 import React from 'react';
 import '../../App.css';
 import AboutP from "../AboutP";
-
+import HeroSection from '../Herosection.js';
+import Footer from "../Footer";
 
 export default function About() {
   return (
   <div>
-  <h1 className='about' id="about">ABOUT US</h1>
+   <HeroSection/>
+  <div className='about' id="about"></div>
   <AboutP/>
-
+  <Footer/>
   </div> 
   );
 }

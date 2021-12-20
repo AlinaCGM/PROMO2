@@ -1,14 +1,16 @@
 import React from 'react';
 import '../../App.css';
 import BlogPage from '../BlogPage';
-
+import HeroSection from '../Herosection.js';
+import Footer from "../Footer";
 
  function Blog() {
   return (
   <div>
-  <h1 className='blog' id="blog">BLOG</h1>
+   <HeroSection/>
+  <div className='blog' id="blog"></div>
   <BlogPage/>
-  
+  <Footer/>
   </div> 
   );
 }

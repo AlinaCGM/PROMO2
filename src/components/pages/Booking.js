@@ -1,12 +1,15 @@
 import React from 'react';
 import '../../App.css';
-
+import HeroSection from '../Herosection.js';
+import Footer from "../Footer";
 
  function Booking() {
   return (
   <div>
-  <h1 className='booking' id="booking">BOOKING</h1>
+   <HeroSection/>
+  <div className='booking' id="booking"></div>
 BOOKING
+<Footer/>
   </div> 
   );
 }

@@ -23,9 +23,9 @@
 }
 
 .navbar-logo {
-  color:  rgb(250, 7, 88);
+  color:  rgb(241, 219, 226);
   text-decoration: none;
-  font-size: 60%;
+  font-size: 150%;
   display: flex; 
   align-items: right;
   width: 9rem;
@@ -47,7 +47,7 @@
 
 .nav-item a {
   text-decoration: none;
-  color: rgb(75, 71, 71);
+  color: rgb(253, 251, 251);
   font-size: 1.2rem;
   padding: 6px 0;
   display: flex;

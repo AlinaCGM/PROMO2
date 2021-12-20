@@ -2,13 +2,13 @@
   
     background-color:#79839e;
     width: 100%;
+    height: auto;
     padding: 2rem 0 2rem 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: -1rem;
-    
+  
   }
   
   .img_logo {

@@ -9,9 +9,9 @@ function  BlogPage () {
    
     return (
       <div className="blog-page" id="blog-page">
-   
+       <div className="text-center fs-1 pb-5">BLOG</div>
       <div class="container">
-
+  
   <div class="row blog-1">
     <div class="col-12 col-md-6 col-lg-4 colums">
       <img className="img_blog" src="../images/blog1.jpg" path="/about" alt=""/>

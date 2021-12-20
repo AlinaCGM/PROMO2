@@ -1,10 +1,7 @@
 .blog-page {
-    background-color: #e9ecef;
+    background-color: none;
     width: 100%;
     height: auto;
-   
-    
-    padding: 2rem;
     margin: auto;
     margin-bottom: 2rem;
 }

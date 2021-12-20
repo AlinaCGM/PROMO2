@@ -39,7 +39,10 @@
   background-color: #232a3a;
  
 }
-#root .services {
+#root {
+  background-color: #ede0d4;
+}
+/* #root .services {
   background-color: #fff1e6;
 }
 
@@ -51,7 +54,7 @@
 }
 #root .gallery {
   background-color: #d8f3dc;
-}
+} */
 h1 {
   align-items: center;
   display: flex;

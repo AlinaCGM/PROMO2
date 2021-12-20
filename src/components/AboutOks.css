@@ -1,5 +1,5 @@
 .extrapage-container {
-    background-color: #d8deeb;
+    background-color: none;
     position: relative;
     z-index: 1;
     width: 100%;
@@ -16,6 +16,7 @@
     letter-spacing: 0.5px;
     line-height: 2rem;  
     padding: 2rem;
+    text-align: justify;
 }
 
 .colum-about{

@@ -21,13 +21,12 @@ function AboutOks() {
 
 <div id="" className=" extrapage-container flex ">
 
-
 <div class="row pictures justify-content-center ">
             <div class="col-12 col-md-6 col-lg-6 col-xl-6 colum-about colum-img1  ">
             {/* <img className="image-about1" src="../images/woman1.jpg"  path="/about" alt=""/> */}
            </div> 
            <div class="col-12 col-md-6 col-lg-6 colum-about  ">
-           <p className="information-about text-center">
+           <p className="information-about ">
            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
            Sed malesuada molestie nulla, vel hendrerit nulla suscipit sed.
             Donec diam leo, efficitur sit amet finibus ac, laoreet in est. 
