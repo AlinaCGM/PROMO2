@@ -1,19 +1,19 @@
 .massage-container {
-    background-color: #232a3a;
+    background-color: #84888f;
     margin: 0 auto 0 auto;
     width: 100%;
     height: auto;
-    padding: 2rem 2rem 2rem 2rem  ;
+    /* padding: 2rem 2rem 2rem 2rem  ; */
    
 }
 
  .img-m {
     width: 100%;
-    padding: 1rem;
+    padding: 2px;
     height: auto; 
 }  
 
-@media screen and (min-width: 270px) and (max-width:768px){
+/* @media screen and (min-width: 270px) and (max-width:768px){
     .massage-container {
         background-color: #232a3a;
         margin: 0 auto 0 auto;
@@ -29,5 +29,5 @@
         height: auto; 
     }  
     
-}
+} */
     
