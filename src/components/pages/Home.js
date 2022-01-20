@@ -3,10 +3,8 @@
 import HeroSection from '../Herosection.js';
 import ServiceSection from '../ServiceSection.js';
 import Massage from "../Massage";
-// import BlogPage from '../BlogPage.js';
-import AboutOks from "../AboutOks";
+import AboutSectionHome from "../AboutSectionHome";
 import Footer from "../Footer";
-// import ImageSlide from "../ImageSlide";
 import CardServicesYoga from "../CardServicesYoga";
 
 
@@ -17,10 +15,8 @@ function Home() {
     <HeroSection/>
     <ServiceSection/>
     <CardServicesYoga/>
-    <AboutOks/>
+    <AboutSectionHome/>
     <Massage/>
-    {/* <ImageSlide/> */}
-    {/* <BlogPage/>   */}
     <Footer/>
     </>
   );

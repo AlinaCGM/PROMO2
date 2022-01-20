@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import "./AboutOks.css";
+import "./AboutSectionHome.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from './Button';
 
 
-function AboutOks() {
+function AboutSectionHome() {
   const location = useLocation();
   useEffect(() => {
     if (location.hash) {
@@ -27,7 +27,7 @@ function AboutOks() {
            </div> 
            <div class="col-12 col-md-6 col-lg-6 colum-about  ">
            <p className="information-about ">
-           Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
            Sed malesuada molestie nulla, vel hendrerit nulla suscipit sed.
             Donec diam leo, efficitur sit amet finibus ac, laoreet in est. 
             Maecenas at velit in diam eleifend iaculis. Vivamus sit amet justo commodo,
@@ -70,4 +70,4 @@ function AboutOks() {
   }
  
    
-  export default AboutOks;
+  export default AboutSectionHome;

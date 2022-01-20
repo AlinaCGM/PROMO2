@@ -19,9 +19,6 @@
   }
   
   
-  form {
-    width:300px;
-  }
   .footer-links {
    
     /* max-width: 2000px; */
@@ -132,11 +129,7 @@
       padding-right: 2rem;
       
     }
-    .form-control {
-      max-width: 400px;
-      margin-bottom: 1rem;
-      
-    }
+    
   }
    @media screen and (max-width: 650px) {
    
@@ -166,11 +159,7 @@
   
   
   @media (min-width:550px) {
-    .form-control {
-      max-width: 60%;
-      margin-bottom: 1rem;
-  
-    }
+ 
   }
   .form-control {
     margin-bottom: 1rem;
@@ -178,14 +167,7 @@
   }
   
   @media (max-width: 549px) {
-    .form-control {
-      display: flex;
-   
-      margin-bottom: 1rem;
-      
-      max-width: 250px;
-      height: auto;
-    }
+
      .footer-container {
      padding-left: 1px;
     } 
@@ -206,4 +188,7 @@
     }
    
   }  
-  
+  .nextek {
+    color: #fff;
+    text-decoration: none;
+  }

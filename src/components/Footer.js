@@ -33,7 +33,10 @@ function Footer() {
       <section class="social-media">
         <div class="social-media-wrap">
          
-          <small class="website-rights">© 2021</small>
+        <div class="website-rights mx-auto "> © 2021  <span> 
+  <a href="https://www.nextek.se/" class="nextek" target="_blank" rel="noreferrer" > . Digital Magic by NexTek</a></span> </div>
+
+     
           <div class="social-icons">
           <a href="/" class="social-icon-link facebook" target="_blank" rel="noreferrer" ><i class="fab fa-facebook-square"></i></a>
             <a href="/" target="_blank" rel="noreferrer" ><i class="fab fa-linkedin" /></a>

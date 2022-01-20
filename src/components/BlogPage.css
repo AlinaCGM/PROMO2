@@ -5,14 +5,9 @@
     margin: auto;
     margin-bottom: 2rem;
 }
-/* .blog-1 {
-    height:60vh;
- 
-    
-   
-} */
+
  .colums {
-     border: 1px solid grey;
+     border: 10px solid rgb(216, 216, 205);
     padding:2rem;
  }
 
@@ -22,10 +17,3 @@
      height:auto;
  }
 
-  /* .blog-content {
-     width:80%;
-     height:auto;
-     text-align: justify;
-     overflow-y:scroll;
-
- }  */
