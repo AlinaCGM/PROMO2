@@ -1,131 +1,141 @@
-
-  
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import * as Icons from "react-icons/fa";
-import "./Navbar.css";
-import { navItems } from "./NavItems";
-//  import Button from "./Button";
-
-
+import React, { useState, useEffect } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import * as Icons from 'react-icons/fa'
+import './Navbar.css'
+import { navItems } from './NavItems'
+import { auth, db } from '../firebase-config'
+import { signOut } from 'firebase/auth'
 
 function Navbar() {
+  let navigate = useNavigate()
+  const [mobile, setMobile] = useState(false)
+  const [sidebar, setSidebar] = useState(false)
+  const [navbar, setNavbar] = useState(false)
+  const [isAuth, setIsAuth] = useState(localStorage.getItem('isAuth'))
 
-  const [mobile, setMobile] = useState(false);
-  const [sidebar, setSidebar] = useState(false);
-  const [navbar, setNavbar] = useState(false);
-  
+  const signUserOut = async () => {
+    await signOut(auth).then(() => {
+      localStorage.clear()
+      // window.location.pathname = '/'
+
+      setIsAuth(false)
+      navigate = '/'
+      console.log(isAuth)
+    })
+  }
 
   useEffect(() => {
     if (window.innerWidth < 1100) {
-      setMobile(true);
+      setMobile(true)
     }
-  }, []);
- 
+  }, [])
+
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 1100
-        ) {
-        setMobile(true);
+      if (window.innerWidth < 1100) {
+        setMobile(true)
       } else {
-        setMobile(false);
-        setSidebar(false);
+        setMobile(false)
+        setSidebar(false)
       }
-    };
-    const changeBackground = () => { 
+    }
+    const changeBackground = () => {
       if (window.scrollY >= 600) {
-        setNavbar(true);
+        setNavbar(true)
       } else {
-        setNavbar(false);
+        setNavbar(false)
       }
-    };
-  
-    window.addEventListener("scroll", changeBackground);
+    }
 
-    window.addEventListener("resize", handleResize);
+    window.addEventListener('scroll', changeBackground)
+
+    window.addEventListener('resize', handleResize)
     return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
 
   return (
     <>
-    <div className="navbar-container">
-      <nav className={navbar ? "navbar active" : "navbar"}>
-        <Link to="/" className="navbar-logo" onClick={() => setSidebar(false)}>
-          <Icons.FaPiedPiper />
-          LOGO
-        </Link>
-        {!mobile && (
-          <ul className="nav-items">
+      <div className='navbar-container'>
+        <nav className={navbar ? 'navbar active' : 'navbar'}>
+          <Link
+            to='/'
+            className='navbar-logo'
+            onClick={() => setSidebar(false)}
+          >
+            <Icons.FaPiedPiper />
+            LOGO
+          </Link>
+          {!mobile && (
+            <ul className='nav-items'>
+              {navItems.map((item) => {
+                return (
+                  <li key={item.id} className={item.nName}>
+                    <Link to={item.path}>
+                      {item.icon}
+                      <span>{item.title}</span>
+                    </Link>
+                  </li>
+                )
+              })}
+              {isAuth ? (
+                <button onClick={signUserOut} navigate='/'>
+                  Log Out
+                </button>
+              ) : (
+                <Link to='/login'>Admin</Link>
+              )}
+            </ul>
+          )}
+          {/* {!mobile && <Button />} */}
+
+          {mobile && (
+            <div className='sidebar-toggle'>
+              {sidebar ? (
+                <Icons.FaTimes
+                  className='sidebar-toggle-logo'
+                  onClick={() => setSidebar(!sidebar)}
+                />
+              ) : (
+                <Icons.FaBars
+                  className='sidebar-toggle-logo'
+                  onClick={() => setSidebar(!sidebar)}
+                />
+              )}
+            </div>
+          )}
+        </nav>
+
+        <div className={sidebar ? 'sidebar active' : 'sidebar'}>
+          <ul className='sidebar-items'>
             {navItems.map((item) => {
               return (
-                <li key={item.id} className={item.nName}>
+                <li
+                  key={item.id}
+                  className={item.sName}
+                  onClick={() => setSidebar(false)}
+                >
                   <Link to={item.path}>
                     {item.icon}
                     <span>{item.title}</span>
                   </Link>
                 </li>
-              );
+              )
             })}
           </ul>
-        )}
-        {/* {!mobile && <Button />} */}
-
-        {mobile && (
-          <div className="sidebar-toggle">
-            {sidebar ? (
-              <Icons.FaTimes
-                className="sidebar-toggle-logo"
-                onClick={() => setSidebar(!sidebar)}
-              />
-            ) : (
-              <Icons.FaBars
-                className="sidebar-toggle-logo"
-                onClick={() => setSidebar(!sidebar)}
-              />
-            )}
-          </div>
-        )}
-      </nav>
-
-      <div className={sidebar ? "sidebar active" : "sidebar"}>
-        <ul className="sidebar-items">
-          {navItems.map((item) => {
-            return (
-              <li
-                key={item.id}
-                className={item.sName}
-                onClick={() => setSidebar(false)}
-              >
-                <Link to={item.path}>
-                  {item.icon}
-                  <span>{item.title}</span>
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-        {/* <Button onClick={() => setSidebar(false)} /> */}
-      </div>
+          {/* <Button onClick={() => setSidebar(false)} /> */}
+        </div>
       </div>
     </>
-  );
+  )
 }
 
-export default Navbar;
-
-
-
-
-
-
-
-
+export default Navbar
 
 // function Navbar() {
 //   const [dropdown, setDropdown] = useState(false);
-  
+
 //   return (
 //     <>
 //       <nav className="navbar">

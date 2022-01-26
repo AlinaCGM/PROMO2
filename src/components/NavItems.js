@@ -41,14 +41,6 @@ export const navItems = [
     nName: 'nav-item',
     sName: 'sidebar-item',
   },
-
-  {
-    id: 7,
-    title: 'Login',
-    path: './login',
-    nName: 'nav-item',
-    sName: 'sidebar-item',
-  },
 ]
 
 export const serviceDropdown = [

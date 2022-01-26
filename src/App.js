@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './App.css'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 // import {Switch} from "react-router"
@@ -14,19 +14,21 @@ import Services from './components/pages/Services.js'
 import Login from './components/pages/Login'
 
 function App() {
+  const [isAuth, setIsAuth] = useState(localStorage.getItem('isAuth'))
+
   return (
     <>
       <Router>
         {/* <Logo/> */}
         <Navbar />
         <Routes>
-          <Route path='/' element={<Home />} />
+          <Route path='/' element={<Home isAuth={isAuth} />} />
           <Route path='/about' element={<About />} />
           <Route path='/services' element={<Services />} />
           <Route path='/blog' element={<Blog />} />
           <Route path='/gallery' element={<Gallery />} />
           <Route path='/contact' element={<Contact />} />
-          <Route path='/login' element={<Login />} />
+          <Route path='/login' element={<Login setIsAuth={setIsAuth} />} />
         </Routes>
       </Router>
     </>
