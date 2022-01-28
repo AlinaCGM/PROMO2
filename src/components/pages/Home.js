@@ -6,12 +6,13 @@ import Massage from '../Massage'
 import AboutSectionHome from '../AboutSectionHome'
 import Footer from '../Footer'
 import CardServicesYoga from '../CardServicesYoga'
+// import Update from '../UpdateContent'
 
 function Home() {
   return (
     <>
       <HeroSection />
-
+      {/* <Update /> */}
       <ServiceSection />
       <CardServicesYoga />
       <AboutSectionHome />

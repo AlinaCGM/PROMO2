@@ -2,13 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import './CardServices.scss'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { addDoc, collection } from 'firebase/firestore'
-import { db, auth } from '../firebase-config'
-import { useNavigate } from 'react-router-dom'
 
 function CardServices() {
-  const [isAuth, setIsAuth] = useState(localStorage.getItem('isAuth'))
-
   const location = useLocation()
 
   useEffect(() => {
