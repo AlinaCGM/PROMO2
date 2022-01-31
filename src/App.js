@@ -12,6 +12,7 @@ import Gallery from './components/pages/Gallery'
 // import Booking from "./components/pages/Booking";
 import Services from './components/pages/Services.js'
 import Login from './components/pages/Login'
+import EditPost from './components/EditPosts'
 
 function App() {
   const [isAuth, setIsAuth] = useState(localStorage.getItem('isAuth'))
@@ -28,6 +29,7 @@ function App() {
           <Route path='/blog' element={<Blog />} />
           <Route path='/gallery' element={<Gallery />} />
           <Route path='/contact' element={<Contact />} />
+          <Route path='/editposts' element={<EditPost />} />
           <Route path='/login' element={<Login setIsAuth={setIsAuth} />} />
         </Routes>
       </Router>

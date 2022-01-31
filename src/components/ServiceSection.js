@@ -60,6 +60,9 @@ const ServiceSection = () => {
   const togglePopup = () => {
     setIsOpen(!isOpen)
   }
+  const publishButton = () => {
+    postLists.map((infos) => updateUser(infos.id, infos.text, infos.title))
+  }
   return (
     // <FadeInSection>
     <div className='cont-services icon-box'>
@@ -91,47 +94,9 @@ const ServiceSection = () => {
                       </button>
                     </Link>
                   ) : (
-                    <>
-                      <button onClick={togglePopup}>Edit</button>
-
-                      {isOpen && (
-                        <Popup
-                          content={
-                            <>
-                              <div>
-                                <input
-                                  placeholder='Edit Title'
-                                  onChange={(event) => {
-                                    setNewTitle(event.target.value)
-                                  }}
-                                />
-                                <input
-                                  placeholder='Edit Text'
-                                  onChange={(event) => {
-                                    setNewText(event.target.value)
-                                  }}
-                                />
-                                {/* {info.map((infos) => { 
-                      return (
-                      <button onClick={(infos.id, infos.title, infos.text)}>
-                        Publish
-                      </button> 
-                      )
-                      })} */}
-                                <button
-                                  onClick={() => {
-                                    updateUser(post.id, post.text, post.title)
-                                  }}
-                                >
-                                  Publish
-                                </button>
-                              </div>
-                            </>
-                          }
-                          handleClose={togglePopup}
-                        />
-                      )}
-                    </>
+                    <Link to='/editposts'>
+                      <button>Edit</button>
+                    </Link>
                   )}
                 </div>
               </Card>

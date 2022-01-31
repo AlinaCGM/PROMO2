@@ -2,7 +2,7 @@ import React from 'react'
 import { auth, provider } from '../../firebase-config'
 import { signInWithPopup } from 'firebase/auth'
 import { useNavigate } from 'react-router-dom'
-import { ContentSection } from '../Content'
+// import { ContentSection } from '../Content'
 
 function Login({ setIsAuth }) {
   let navigate = useNavigate()
@@ -27,9 +27,7 @@ function Login({ setIsAuth }) {
         <>
         <Link to="/login" </>)
       } */}
-      <h3>
-        <ContentSection />
-      </h3>
+      <h3>{/* <ContentSection /> */}</h3>
     </div>
   )
 }

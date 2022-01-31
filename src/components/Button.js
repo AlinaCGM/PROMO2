@@ -32,7 +32,6 @@ function Button() {
     const getInfo = async () => {
       const data = await getDocs(usersCollectionRef)
       setInfo(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
-      console.log(getInfo)
     }
 
     getInfo()
