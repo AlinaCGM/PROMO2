@@ -1,99 +1,101 @@
-import { useState, useEffect } from 'react'
-import { db } from '../firebase-config'
-import {
-  collection,
-  getDocs,
-  addDoc,
-  updateDoc,
-  doc,
-  deleteDoc,
-} from 'firebase/firestore'
+// THIS PAGE IS FOR ON CRUD REFERENCE ONLY
 
-function Update() {
-  const [newName, setNewName] = useState('')
-  const [newAge, setNewAge] = useState(0)
-  const [users, setUsers] = useState([])
-  const usersCollectionRef = collection(db, 'services-data')
+// import { useState, useEffect } from 'react'
+// import { db } from '../firebase-config'
+// import {
+//   collection,
+//   getDocs,
+//   addDoc,
+//   updateDoc,
+//   doc,
+//   deleteDoc,
+// } from 'firebase/firestore'
 
-  const createUser = async () => {
-    await addDoc(usersCollectionRef, { name: newName, age: Number(newAge) })
-  }
+// function Update() {
+//   const [newName, setNewName] = useState('')
+//   const [newAge, setNewAge] = useState(0)
+//   const [users, setUsers] = useState([])
+//   const usersCollectionRef = collection(db, 'services-data')
 
-  const updateUser = async (id, text, title) => {
-    const userDoc = doc(db, 'services-data', id) // users-name of the collection
-    // const newFields = { age: Number(newAge) }
-    const newNames = { title: newName, text: newAge }
-    await updateDoc(userDoc, newNames)
-    return updateUser(id, text, title)
-  }
+//   const createUser = async () => {
+//     await addDoc(usersCollectionRef, { name: newName, age: Number(newAge) })
+//   }
 
-  const deleteUser = async (id) => {
-    const userDoc = doc(db, 'users', id)
-    await deleteDoc(userDoc)
-  }
+//   const updateUser = async (id, text, title) => {
+//     const userDoc = doc(db, 'services-data', id) // users-name of the collection
+//     // const newFields = { age: Number(newAge) }
+//     const newNames = { title: newName, text: newAge }
+//     await updateDoc(userDoc, newNames)
+//     return updateUser(id, text, title)
+//   }
 
-  useEffect(() => {
-    const getUsers = async () => {
-      const data = await getDocs(usersCollectionRef)
-      setUsers(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
-      console.log(getUsers)
-    }
+//   const deleteUser = async (id) => {
+//     const userDoc = doc(db, 'users', id)
+//     await deleteDoc(userDoc)
+//   }
 
-    getUsers()
-    // eslint-disable-next-line
-  }, [])
+//   useEffect(() => {
+//     const getUsers = async () => {
+//       const data = await getDocs(usersCollectionRef)
+//       setUsers(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
+//       console.log(getUsers)
+//     }
 
-  const usersDisplay = async () => {
-    const data = await getDocs(usersCollectionRef)
-    setUsers(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
+//     getUsers()
+//     // eslint-disable-next-line
+//   }, [])
 
-    usersDisplay()
-  }
+//   const usersDisplay = async () => {
+//     const data = await getDocs(usersCollectionRef)
+//     setUsers(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
 
-  return (
-    <div className='App'>
-      <input
-        placeholder='Name...'
-        onChange={(event) => {
-          setNewName(event.target.value)
-        }}
-      />
-      <input
-        type='number '
-        placeholder='Age...'
-        onChange={(event) => {
-          setNewAge(event.target.value)
-        }}
-      />
+//     usersDisplay()
+//   }
 
-      <button onClick={createUser}>Create User</button>
+//   return (
+//     <div className='App'>
+//       <input
+//         placeholder='Name...'
+//         onChange={(event) => {
+//           setNewName(event.target.value)
+//         }}
+//       />
+//       <input
+//         type='number '
+//         placeholder='Age...'
+//         onChange={(event) => {
+//           setNewAge(event.target.value)
+//         }}
+//       />
 
-      {users.map((user) => {
-        return (
-          <div>
-            <h1>Name: {user.title}</h1>
-            <h1>Age: {user.text}</h1>
-            <button
-              onClick={() => {
-                updateUser(user.id, user.title, user.text)
-              }}
-            >
-              Update User
-            </button>
+//       <button onClick={createUser}>Create User</button>
 
-            <button
-              onClick={() => {
-                deleteUser(user.id)
-                usersDisplay()
-              }}
-            >
-              Delete user
-            </button>
-          </div>
-        )
-      })}
-    </div>
-  )
-}
+//       {users.map((user) => {
+//         return (
+//           <div>
+//             <h1>Name: {user.title}</h1>
+//             <h1>Age: {user.text}</h1>
+//             <button
+//               onClick={() => {
+//                 updateUser(user.id, user.title, user.text)
+//               }}
+//             >
+//               Update User
+//             </button>
 
-export default Update
+//             <button
+//               onClick={() => {
+//                 deleteUser(user.id)
+//                 usersDisplay()
+//               }}
+//             >
+//               Delete user
+//             </button>
+//           </div>
+//         )
+//       })}
+//     </div>
+//   )
+// }
+
+// export default Update

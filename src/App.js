@@ -13,6 +13,7 @@ import Gallery from './components/pages/Gallery'
 import Services from './components/pages/Services.js'
 import Login from './components/pages/Login'
 import EditPost from './components/EditPosts'
+import Storage1 from './components/PicStorage1'
 
 function App() {
   const [isAuth, setIsAuth] = useState(localStorage.getItem('isAuth'))
@@ -25,6 +26,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home isAuth={isAuth} />} />
           <Route path='/about' element={<About />} />
+          <Route path='/storage' element={<Storage1 />} />
           <Route path='/services' element={<Services />} />
           <Route path='/blog' element={<Blog />} />
           <Route path='/gallery' element={<Gallery />} />

@@ -21,13 +21,6 @@ function Login({ setIsAuth }) {
       <button className='login-with-google-btn' onClick={signInWithGoogle}>
         Sign in with Google
       </button>
-      {/* {isAuth ? (
-<Link to="/"
-      ):(
-        <>
-        <Link to="/login" </>)
-      } */}
-      <h3>{/* <ContentSection /> */}</h3>
     </div>
   )
 }

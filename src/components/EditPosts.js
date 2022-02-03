@@ -1,35 +1,17 @@
 import React, { useState, useEffect } from 'react'
 import { db, auth } from '../firebase-config'
 import { useNavigate } from 'react-router-dom'
-import {
-  collection,
-  getDocs,
-  addDoc,
-  updateDoc,
-  doc,
-  deleteDoc,
-} from 'firebase/firestore'
+import { collection, getDocs, updateDoc, doc } from 'firebase/firestore'
+import Storage from './PicStorage'
 
-import Update from './UpdateContent'
-
-function EditPost() {
+function EditPost(props) {
   const [postLists, setPostList] = useState([])
-
   const [newText, setNewText] = useState('')
   const [newTitle, setNewTitle] = useState('')
-  const [info, setInfo] = useState([])
+  const [files, setFiles] = useState([])
 
   const postsCollectionRef = collection(db, 'services-data')
   let navigate = useNavigate()
-
-  // const createPost = async () => {
-  //   await addDoc(postsCollectionRef, {
-  //     newTitle,
-  //     postText,
-  //     author: { name: auth.currentUser.displayName, id: auth.currentUser.uid },
-  //   })
-  //   navigate('/')
-  // }
 
   const updateUser = async (id, text, title) => {
     const userDoc = doc(db, 'services-data', id) // users-name of the collection
@@ -56,27 +38,23 @@ function EditPost() {
     return
   }
 
-  // useEffect(() => {
-  //   if (!isAuth) {
-  //     navigate('/login')
-  //   }
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, [])
-
   return (
     <div>
       <div>
-        {/* <Update /> */}
+        <h1>Edit Services Section</h1>
         {postLists.map((post) => {
           return (
             <div>
-              <h1>Title: {post.title}</h1>
-              <h1>Content: {post.text}</h1>
-              <h1>Edit Post</h1>
+              <h1>Title: {post.title} </h1>
+              <h1>Content: {post.text} </h1>
+
               <div>
                 <label>Title:</label>
                 <input
+                  key={props.id}
                   placeholder='Title'
+                  type='text'
+                  required
                   onChange={(event) => {
                     setNewTitle(event.target.value)
                   }}
@@ -86,11 +64,15 @@ function EditPost() {
               <label>Content</label>
 
               <textarea
+                key={props.id}
                 placeholder='Text...'
+                type='text'
+                required
                 onChange={(event) => {
                   setNewText(event.target.value)
                 }}
               />
+              <Storage />
               <button
                 onClick={() => {
                   updateUser(post.id, post.title, post.text)

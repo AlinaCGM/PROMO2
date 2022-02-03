@@ -3,15 +3,8 @@ import { Link } from 'react-router-dom'
 import './Button.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { db } from '../firebase-config'
-import {
-  collection,
-  getDocs,
-  addDoc,
-  updateDoc,
-  doc,
-  deleteDoc,
-} from 'firebase/firestore'
-import Popup from './Popup'
+import { collection, getDocs, updateDoc, doc } from 'firebase/firestore'
+// import Popup from './Popup'
 
 function Button() {
   const [isAuth] = useState(localStorage.getItem('isAuth'))
@@ -48,49 +41,22 @@ function Button() {
 
   return (
     <div>
-      {!isAuth ? (
-        <Link to='signup'>
-          <button
-            type='button'
-            className='btn btn-outline-secondary btn-sm button'
-          >
-            more
-          </button>
-        </Link>
-      ) : (
-        <>
-          <button onClick={togglePopup}>Edit</button>
-          {isOpen && (
-            <Popup
-              content={
-                <>
-                  <input
-                    placeholder='Edit Title'
-                    onChange={(event) => {
-                      setNewTitle(event.target.value)
-                    }}
-                  />
-                  <input
-                    placeholder='Edit Text'
-                    onChange={(event) => {
-                      setNewText(event.target.value)
-                    }}
-                  />
-                  {/* {info.map((infos) => {
-                    return (
-                      <button onClick={(infos.id, infos.title, infos.text)}>
-                        Publish
-                      </button>
-                    )
-                  })} */}
-                </>
-              }
-              handleClose={togglePopup}
-            />
-          )}
-          )
-        </>
-      )}
+      <div>
+        {!isAuth ? (
+          <Link to='signup'>
+            <button
+              type='button'
+              className='btn btn-outline-secondary btn-sm button'
+            >
+              more
+            </button>
+          </Link>
+        ) : (
+          <Link to='/editposts'>
+            <button>Edit</button>
+          </Link>
+        )}
+      </div>
     </div>
   )
 }

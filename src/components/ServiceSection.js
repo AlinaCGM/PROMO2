@@ -13,7 +13,7 @@ import {
   updateDoc,
 } from 'firebase/firestore'
 import { auth, db } from '../firebase-config'
-import Popup from './Popup'
+import Storage from './PicStorage'
 
 // import { ContentSection } from './Content'
 // import FadeInSection from "./FadeInSection";
@@ -34,12 +34,6 @@ const ServiceSection = () => {
     return updateUser(id, text, title)
   }
 
-  const deletePost = async (id) => {
-    const postDoc = doc(db, 'services-data', id)
-    await deleteDoc(postDoc)
-    // window.location.reload()
-  }
-
   useEffect(() => {
     const getPosts = async () => {
       const data = await getDocs(postsCollectionRef)
@@ -57,12 +51,7 @@ const ServiceSection = () => {
     setPostList(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
     updatePage()
   }
-  const togglePopup = () => {
-    setIsOpen(!isOpen)
-  }
-  const publishButton = () => {
-    postLists.map((infos) => updateUser(infos.id, infos.text, infos.title))
-  }
+
   return (
     // <FadeInSection>
     <div className='cont-services icon-box'>
@@ -71,12 +60,13 @@ const ServiceSection = () => {
           <div className='row align-items-center'>
             <div className='col-12  col-md-6 col-lg-3  d-flex justify-content-between '>
               <Card className='first col '>
-                <img
+                {/* <img
                   className='img_first one'
                   src='../images/11.png'
                   path='/about'
                   alt=''
-                />
+                /> */}
+                {/* <Storage /> */}
 
                 <Card.Body>
                   <h2 className='title_services'>{post.title}</h2>
