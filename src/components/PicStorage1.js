@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { storage } from '../firebase-config'
 import { ref, uploadBytes, getDownloadURL, getStorage } from 'firebase/storage'
-import firebase from 'firebase/app'
 import 'firebase/storage'
 import { Image } from 'react-bootstrap'
 

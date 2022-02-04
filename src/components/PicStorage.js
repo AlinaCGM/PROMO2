@@ -17,7 +17,7 @@ function Storage() {
   }
 
   const handleSubmit = () => {
-    const imageRef = ref(storage, `/images/${image.name}`)
+    const imageRef = ref(storage, 'image1')
     uploadBytes(imageRef, image)
       .then(() => {
         getDownloadURL(imageRef)
@@ -42,11 +42,9 @@ function Storage() {
       <button onClick={handleSubmit}>Submit</button>
 
       <div>
-        {image.map((images) => (
-          <h1>
-            <img key={images.name} src={images.url} alt='album' />
-          </h1>
-        ))}
+        <h1>
+          <img src={url} alt='album' />
+        </h1>
       </div>
     </div>
   )
