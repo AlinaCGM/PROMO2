@@ -13,7 +13,6 @@ import {
   updateDoc,
 } from 'firebase/firestore'
 import { auth, db, storage } from '../firebase-config'
-import 'firebase/storage'
 import { Image } from 'react-bootstrap'
 import {
   ref,

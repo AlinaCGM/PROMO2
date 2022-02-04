@@ -1,8 +1,16 @@
 import React, { useState, useEffect } from 'react'
-import { db, auth } from '../firebase-config'
+import { db, auth, storage } from '../firebase-config'
 import { useNavigate } from 'react-router-dom'
 import { collection, getDocs, updateDoc, doc } from 'firebase/firestore'
 import Storage from './PicStorage'
+import {
+  ref,
+  uploadBytes,
+  getDownloadURL,
+  getStorage,
+  connectStorageEmulator,
+} from 'firebase/storage'
+import { Image } from 'react-bootstrap'
 
 function EditPost(props) {
   const [postLists, setPostList] = useState([])
@@ -14,21 +22,18 @@ function EditPost(props) {
   const [newTitle3, setNewTitle3] = useState('')
   const [newText4, setNewText4] = useState('')
   const [newTitle4, setNewTitle4] = useState('')
-  const [newText, setNewText] = useState('')
-  const [newTitle, setNewTitle] = useState('')
-  const [files, setFiles] = useState([])
+  const [files1, setFiles1] = useState([])
+  const [files2, setFiles2] = useState([])
+  const [files3, setFiles3] = useState([])
+  const [files4, setFiles4] = useState([])
+
+  const [image, setImage] = useState(null)
+  const [url1, setUrl1] = useState([])
+
   const [result, setResult] = useState('')
 
   const postsCollectionRef = collection(db, 'services-data')
   let navigate = useNavigate()
-
-  // const updateUser = async (kkWsx3b47ew0Gfyb13by) => {
-  //   const userDoc = doc(db, 'services-data', kkWsx3b47ew0Gfyb13by) // users-name of the collection
-  //   const newFields = { text1: 'ddd', title1: 'bbb' }
-  //   await updateDoc(userDoc, newFields)
-  //   console.log(updateUser)
-  //   return
-  // }
 
   const update1 = async () => {
     const servicesDoc = doc(db, 'services-data', 'kkWsx3b47ew0Gfyb13by')
@@ -66,6 +71,12 @@ function EditPost(props) {
     console.log('text', form.text, form.elements.text)
   }
 
+  const handleImageChange = (e) => {
+    if (e.target.files[0]) {
+      setImage(e.target.files[0])
+    }
+  }
+
   useEffect(() => {
     const getInfo = async () => {
       const data = await getDocs(postsCollectionRef)
@@ -78,11 +89,79 @@ function EditPost(props) {
     // eslint-disable-next-line
   }, [])
 
+  const handleSubmit1 = () => {
+    const imageRef = ref(storage, 'image1')
+    uploadBytes(imageRef, image)
+      .then(() => {
+        setImage(null)
+      })
+      .catch((error) => {
+        console.log(error.message)
+      })
+  }
+
+  const handleSubmit2 = () => {
+    const imageRef = ref(storage, 'image2')
+    uploadBytes(imageRef, image)
+      .then(() => {
+        setImage(null)
+      })
+      .catch((error) => {
+        console.log(error.message)
+      })
+  }
+
+  const handleSubmit3 = () => {
+    const imageRef = ref(storage, 'image3')
+    uploadBytes(imageRef, image)
+      .then(() => {
+        setImage(null)
+      })
+      .catch((error) => {
+        console.log(error.message)
+      })
+  }
+
+  const handleSubmit4 = () => {
+    const imageRef = ref(storage, 'image4')
+    uploadBytes(imageRef, image)
+      .then(() => {
+        setImage(null)
+      })
+      .catch((error) => {
+        console.log(error.message)
+      })
+  }
+
   const updatePage = async () => {
     const data = await getDocs(postsCollectionRef)
     setPostList(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
     return
   }
+
+  const storage1 = getStorage()
+  getDownloadURL(ref(storage, 'image1')).then((url) => {
+    setFiles1(url)
+    return
+  })
+
+  const storage2 = getStorage()
+  getDownloadURL(ref(storage, 'image2')).then((url) => {
+    setFiles2(url)
+    return
+  })
+
+  const storage3 = getStorage()
+  getDownloadURL(ref(storage, 'image3')).then((url) => {
+    setFiles3(url)
+    return
+  })
+
+  const storage4 = getStorage()
+  getDownloadURL(ref(storage, 'image4')).then((url) => {
+    setFiles4(url)
+    return
+  })
 
   const card1 = postLists.map((text) => (
     <>
@@ -140,7 +219,11 @@ function EditPost(props) {
           <div>
             <div>
               <h1>Card 1</h1>
+
               {card1}
+              <Image src={files1} width='96' height='65' />
+              <input type='file' onChange={handleImageChange} />
+              <button onClick={handleSubmit1}>Submit</button>
               <form onSubmit={handleSubmit}>
                 <div>
                   <input
@@ -174,6 +257,9 @@ function EditPost(props) {
             <div>
               <h1>Card 2</h1>
               {card2}
+              <Image src={files2} width='96' height='65' />
+              <input type='file' onChange={handleImageChange} />
+              <button onClick={handleSubmit2}>Submit</button>
               <form onSubmit={handleSubmit}>
                 <div>
                   <input
@@ -207,6 +293,9 @@ function EditPost(props) {
             <div>
               <h1>Card 3</h1>
               {card3}
+              <Image src={files3} width='96' height='65' />
+              <input type='file' onChange={handleImageChange} />
+              <button onClick={handleSubmit3}>Submit</button>
               <form onSubmit={handleSubmit}>
                 <div>
                   <input
@@ -238,7 +327,11 @@ function EditPost(props) {
               </form>
             </div>
             <div>
-              <h1>Card 4</h1> {card4}
+              <h1>Card 4</h1>
+              {card4}
+              <Image src={files4} width='96' height='65' />
+              <input type='file' onChange={handleImageChange} />
+              <button onClick={handleSubmit4}>Submit</button>
               <form onSubmit={handleSubmit}>
                 <div>
                   <input
