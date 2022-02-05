@@ -26,13 +26,9 @@ function EditPost(props) {
   const [files2, setFiles2] = useState([])
   const [files3, setFiles3] = useState([])
   const [files4, setFiles4] = useState([])
-
   const [image, setImage] = useState(null)
-  const [url1, setUrl1] = useState([])
-
-  const [result, setResult] = useState('')
-
   const postsCollectionRef = collection(db, 'services-data')
+
   let navigate = useNavigate()
 
   const update1 = async () => {
