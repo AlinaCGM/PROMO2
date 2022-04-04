@@ -1,164 +1,87 @@
-
-  
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import * as Icons from "react-icons/fa";
-import "./Navbar.css";
-import { navItems } from "./NavItems";
-//  import Button from "./Button";
-
-
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.css';
+import "./Navbar.css";                    
+//  tratatatata
 
 function Navbar() {
-
-  const [mobile, setMobile] = useState(false);
-  const [sidebar, setSidebar] = useState(false);
+  const [click, setClick] = useState(false);
   const [navbar, setNavbar] = useState(false);
-  
 
-  useEffect(() => {
-    if (window.innerWidth < 1100) {
-      setMobile(true);
-    }
-  }, []);
+  const handleClick = () => setClick(!click);
  
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < 1100
-        ) {
-        setMobile(true);
-      } else {
-        setMobile(false);
-        setSidebar(false);
-      }
-    };
-    const changeBackground = () => { 
-      if (window.scrollY >= 600) {
-        setNavbar(true);
-      } else {
-        setNavbar(false);
-      }
-    };
-  
-    window.addEventListener("scroll", changeBackground);
 
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+  const changeBackground = () => { 
+    if (window.scrollY >= 600) {
+      setNavbar(true);
+    } else {
+      setNavbar(false);
+    }
+  };
 
+  window.addEventListener("scroll", changeBackground);
   return (
     <>
-    <div className="navbar-container">
-      <nav className={navbar ? "navbar active" : "navbar"}>
-        <Link to="/" className="navbar-logo" onClick={() => setSidebar(false)}>
-          <Icons.FaPiedPiper />
-          LOGO
-        </Link>
-        {!mobile && (
-          <ul className="nav-items">
-            {navItems.map((item) => {
-              return (
-                <li key={item.id} className={item.nName}>
-                  <Link to={item.path}>
-                    {item.icon}
-                    <span>{item.title}</span>
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        )}
-        {/* {!mobile && <Button />} */}
+       <nav className={navbar ? "navbar active" : "navbar"}>
+        <div className="nav-container fixed-top">
+          <NavLink exact to="/" className="nav-logo align-middle">
+          <div><img className="img_logo_nav " src="../images/yogalogo1.png" path="/about" alt=""/></div>
+          </NavLink>
 
-        {mobile && (
-          <div className="sidebar-toggle">
-            {sidebar ? (
-              <Icons.FaTimes
-                className="sidebar-toggle-logo"
-                onClick={() => setSidebar(!sidebar)}
-              />
-            ) : (
-              <Icons.FaBars
-                className="sidebar-toggle-logo"
-                onClick={() => setSidebar(!sidebar)}
-              />
-            )}
-          </div>
-        )}
-      </nav>
-
-      <div className={sidebar ? "sidebar active" : "sidebar"}>
-        <ul className="sidebar-items">
-          {navItems.map((item) => {
-            return (
-              <li
-                key={item.id}
-                className={item.sName}
-                onClick={() => setSidebar(false)}
+          <ul className={click ? "nav-menu active" : "nav-menu"}>
+            <li className="nav-item">
+              <NavLink
+                exact
+                to="/"
+                activeClassName="active"
+                className="nav-links"
+                onClick={handleClick}
               >
-                <Link to={item.path}>
-                  {item.icon}
-                  <span>{item.title}</span>
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-        {/* <Button onClick={() => setSidebar(false)} /> */}
-      </div>
-      </div>
+                Home
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                exact
+                to="/about"
+                activeClassName="active"
+                className="nav-links"
+                onClick={handleClick}
+              >
+                About
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                exact
+                to="/price"
+                activeClassName="active"
+                className="nav-links"
+                onClick={handleClick}
+              >
+                Price
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                exact
+                to="/#imageContact"
+                activeClassName="active"
+                className="nav-links"
+                onClick={handleClick}
+              >
+                Contact Us
+              </NavLink>
+            </li>
+          </ul>
+          <div className="nav-icon" onClick={handleClick}>
+            <i className={click ? "fas fa-times" : "fas fa-bars"}></i>
+          </div>
+        </div>
+      </nav>
     </>
   );
 }
 
 export default Navbar;
 
-
-
-
-
-
-
-
-
-// function Navbar() {
-//   const [dropdown, setDropdown] = useState(false);
-  
-//   return (
-//     <>
-//       <nav className="navbar">
-//         <Link to="/" className="navbar-logo">
-//           Ayurvilla
-//           <Icons.FaTree />
-//         </Link>
-//         <ul className="nav-items">
-//           {navItems.map((item) => {
-//             if (item.title === "Services") {
-//               return (
-//                 <li
-//                   key={item.id}
-//                   className={item.cName}
-//                   onMouseEnter={() => setDropdown(true)}
-//                   onMouseLeave={() => setDropdown(false)}
-//                 >
-//                   <Link to={item.path}>{item.title}</Link>
-//                   {dropdown && <Dropdown />}
-//                 </li>
-//               );
-//             }
-//             return (
-//               <li key={item.id} className={item.cName}>
-//                 <Link to={item.path}>{item.title}</Link>
-//               </li>
-//             );
-//           })}
-//         </ul>
-//         <Button />
-//       </nav>
-//     </>
-//   );
-// }
-
-// export default Navbar;

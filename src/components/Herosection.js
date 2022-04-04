@@ -14,7 +14,7 @@ function  HeroSection () {
      
           <div>
           <ImageSlide/>
-          <h1 className="hero-title"> BREATHE..
+          <h1 className="hero-title"> WELCOME TO YOGA SALON
           </h1>
           
             </div>   

@@ -23,7 +23,7 @@ function CardServicesYoga() {
 <div className="wrapper">
   <h1 className="yoga-title">SOME TITLE</h1>
   <div className="row">
-			<div className="col-12  col-md-6 col-lg-4  d-flex justify-content-between mb-5 " ontouchstart="this.classList.toggle('hover');">
+			<div className="col-10  col-md-6 col-lg-4  d-flex justify-content-between mb-5 " ontouchstart="this.classList.toggle('hover');">
 				<div className="container">
 					<div className="front" > 
 					<img className="services-2" src="../images/cs1.jpg"  path="/about" alt=""/>
@@ -39,7 +39,7 @@ function CardServicesYoga() {
 					</div>
 				</div>
 			</div>
-			<div className="col-12 col-md-6 col-lg-4  d-flex justify-content-between  mb-5" ontouchstart="this.classList.toggle('hover');">
+			<div className="col-10 col-md-6 col-lg-4  d-flex justify-content-between  mb-5" ontouchstart="this.classList.toggle('hover');">
 				<div className="container">
 					<div className="front" ><img className="services-2" src="../images/cs2.jpg"  path="/about" alt=""/>
 						<div className="inner">
@@ -54,7 +54,7 @@ function CardServicesYoga() {
 					</div>
 				</div>
 			</div>
-			<div className="col-12 col-md-6 col-lg-4  d-flex justify-content-between mb-5" ontouchstart="this.classList.toggle('hover');">
+			<div className="col-10 col-md-6 col-lg-4  d-flex justify-content-between mb-5" ontouchstart="this.classList.toggle('hover');">
 				<div className="container">
 					<div className="front" > <img className="services-2" src="../images/cs3.jpg"  path="/about" alt=""/>
 						<div className="inner">
@@ -69,7 +69,7 @@ function CardServicesYoga() {
 					</div>
 				</div>
 			</div>
-			<div className="col-12  col-md-6 col-lg-4  d-flex justify-content-between mb-5" ontouchstart="this.classList.toggle('hover');">
+			<div className="col-10  col-md-6 col-lg-4  d-flex justify-content-between mb-5" ontouchstart="this.classList.toggle('hover');">
 				<div className="container">
 					<div className="front" ><img className="services-2" src="../images/cs4.jpg"  path="/about" alt=""/>
 						<div className="inner">
@@ -84,7 +84,7 @@ function CardServicesYoga() {
 					</div>
 				</div>
 			</div>
-			<div className="col-12  col-md-6 col-lg-4  d-flex justify-content-between mb-5" ontouchstart="this.classList.toggle('hover');">
+			<div className="col-10  col-md-6 col-lg-4  d-flex justify-content-between mb-5" ontouchstart="this.classList.toggle('hover');">
 				<div className="container">
 					<div className="front"> <img className="services-2" src="../images/cs5.jpg"  path="/about" alt=""/>
 						<div className="inner">
@@ -99,7 +99,7 @@ function CardServicesYoga() {
 					</div>
 				</div>
 			</div>
-			<div className="col-12  col-md-6 col-lg-4  d-flex justify-content-between mb-5" ontouchstart="this.classList.toggle('hover');">
+			<div className="col-10  col-md-6 col-lg-4  d-flex justify-content-between mb-5" ontouchstart="this.classList.toggle('hover');">
 				<div className="container">
 					<div className="front" > <img className="services-2" src="../images/cs6.jpg"  path="/about" alt=""/>
 						<div className="inner">
